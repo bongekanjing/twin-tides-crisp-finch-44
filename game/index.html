@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Tides — spot the difference</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: radial-gradient(circle at 30% 10%, #1b2030 0%, #0b0d14 70%);
+    color: #e8ecf5;
+    font: 400 14px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; padding: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  header { display: flex; align-items: baseline; gap: 12px; width: min(1170px, 100%); }
+  h1 { margin: 0; font-size: 19px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  h1 span { color: #7ee2a8; }
+  .hint { margin-left: auto; font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: #7f8798; }
+  main { width: min(1170px, 100%); }
+  canvas { width: 100%; display: block; border-radius: 10px; box-shadow: 0 26px 60px rgba(0,0,0,0.55); outline: none; }
+  canvas:focus-visible { box-shadow: 0 0 0 2px #7ee2a8, 0 26px 60px rgba(0,0,0,0.55); }
+  footer { width: min(1170px, 100%); display: flex; gap: 16px; font-size: 11px; color: #6f7788; letter-spacing: 0.04em; }
+  footer b { color: #9aa3b5; font-weight: 600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Twin <span>Tides</span></h1>
+  <div class="hint">click a difference in either picture</div>
+</header>
+<main>
+  <canvas id="stage" tabindex="0" aria-label="Spot the difference: two pictures side by side"></canvas>
+</main>
+<footer>
+  <span><b>H</b> hint</span>
+  <span><b>R</b> restart</span>
+  <span><b>Enter</b> start / next scene</span>
+</footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
